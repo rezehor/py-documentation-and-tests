@@ -88,16 +88,16 @@ class AuthenticatedMovieApiTests(TestCase):
 
         self.assertEqual(serializer_movie_1.data, res_1_genres.data)
         self.assertEqual(serializer_movie_2.data, res_2_genres.data)
-        self.assertNotEqual(serializer_movie_1, res_2_genres.data)
-        self.assertNotEqual(serializer_movie_2, res_1_genres.data)
+        self.assertNotEqual(serializer_movie_1.data, res_2_genres.data)
+        self.assertNotEqual(serializer_movie_2.data, res_1_genres.data)
         self.assertEqual(serializer_movie_1.data, res_1_actors.data)
         self.assertEqual(serializer_movie_2.data, res_2_actors.data)
-        self.assertNotEqual(serializer_movie_1, res_2_actors.data)
-        self.assertNotEqual(serializer_movie_2, res_1_actors.data)
+        self.assertNotEqual(serializer_movie_1.data, res_2_actors.data)
+        self.assertNotEqual(serializer_movie_2.data, res_1_actors.data)
         self.assertEqual(serializer_movie_1.data, res_1_title.data)
         self.assertEqual(serializer_movie_2.data, res_2_title.data)
-        self.assertNotEqual(serializer_movie_1, res_2_title.data)
-        self.assertNotEqual(serializer_movie_2, res_1_title.data)
+        self.assertNotEqual(serializer_movie_1.data, res_2_title.data)
+        self.assertNotEqual(serializer_movie_2.data, res_1_title.data)
 
     def test_retrieve_movie_detail(self):
         movie_1, movie_2 = create_two_movies()
